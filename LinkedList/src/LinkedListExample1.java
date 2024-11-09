@@ -191,4 +191,36 @@ public class LinkedListExample1 {
         }
         return false;
     }
+
+    /**
+     * Insert a new node in the linked list
+     * @param index the position to insert the new node
+     * @param value the node's value
+     * @return true if the process was a success, false if not
+     */
+    public boolean insert(int index, int value) {
+        // check if the index is out of bounds
+        if(index < 0 || index > length)
+            return false;
+
+        // add a node to the first position in the linked list
+        if(index == 0) {
+            prepend(value);
+            return true;
+        }
+
+        // add a node to the end of the linked list
+        if(index == length) {
+            append(value);
+            return true;
+        }
+
+        // add a node in the middle of the list
+        Node newNode = new Node(value);
+        Node temp = get(index -1); // get the position of the node that comes before the indexed node
+        newNode.next = temp.next;
+        temp.next = newNode;
+        length++;
+        return true;
+    }
 }

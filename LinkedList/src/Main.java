@@ -32,8 +32,11 @@ public class Main {
 //        System.out.println("Node value:" + linkedList.get(2).value);
 //        System.out.println("Node value:" + linkedList.get(0).value);
 
-        System.out.println(linkedList.set(1, 29));
-        linkedList.printList();
+        // set the value of a node
+//        System.out.println(linkedList.set(1, 29));
+//        linkedList.printList();
 
+        linkedList.insert(1, 19);
+        linkedList.printList();
     }
 }
