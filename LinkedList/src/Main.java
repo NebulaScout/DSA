@@ -11,6 +11,8 @@ public class Main {
         linkedList.prepend(9);
 
         linkedList.printList();
+        System.out.println();
+
 
         // Remove the first node in the linked list
 //        System.out.println(linkedList.removeFirst());
@@ -36,7 +38,12 @@ public class Main {
 //        System.out.println(linkedList.set(1, 29));
 //        linkedList.printList();
 
-        linkedList.insert(1, 19);
+        // Insert a node at a specified position in the linked list
+//        linkedList.insert(1, 19);
+//        linkedList.printList();
+
+        // Remove a node at a specified position in the linked list
+        linkedList.remove(1);
         linkedList.printList();
     }
 }

@@ -165,9 +165,12 @@ public class LinkedListExample1 {
      * @return the node that was speified
      */
     public Node get(int index) {
+        // check if the passed parameter is out of bounds
         if(index < 0 || index > length)
             return null;
 
+        // loop through the linked list
+        // until the desired node is obtained
         Node temp = head;
         for(int i = 0; i < index; i++)
             temp = temp.next;
@@ -193,7 +196,7 @@ public class LinkedListExample1 {
     }
 
     /**
-     * Insert a new node in the linked list
+     * Insert a new node at a specified position in the linked list
      * @param index the position to insert the new node
      * @param value the node's value
      * @return true if the process was a success, false if not
@@ -220,7 +223,44 @@ public class LinkedListExample1 {
         Node temp = get(index -1); // get the position of the node that comes before the indexed node
         newNode.next = temp.next;
         temp.next = newNode;
-        length++;
+        length++; // increment the length of the linked list
         return true;
+    }
+
+    /**
+     * Removes a node from the linked list
+     * @param index the node to be removed
+     * @return the removed node
+     */
+    public Node remove(int index) {
+        // check if the position of the node is out of bounds
+        if(index < 0 || index > length)
+            return null;
+
+        // remove the first node
+        if(index == 0)
+            return removeFirst();
+
+        // remove the last node
+        if(index == length)
+            return removeLast();
+
+        // remove the node in the middle
+        // that is between first and last
+
+        // get the node that comes before the node to be removed
+        Node prev = get(index - 1);
+        // get the node to be removed
+        // use prev.next to improve time complexity(that is O(1))
+        // get() has O(n) time complexity
+        Node temp = prev.next;
+
+        // set the previous node to point to
+        // the node that comes after the node to be removed
+        prev.next = temp.next;
+        temp.next = null; // disconnect the node from the linked list
+        length--; // decrement the linked list
+
+        return temp;
     }
 }
