@@ -43,7 +43,11 @@ public class Main {
 //        linkedList.printList();
 
         // Remove a node at a specified position in the linked list
-        linkedList.remove(1);
+//        linkedList.remove(1);
+//        linkedList.printList();
+
+        // Reverse the linked list
+        linkedList.reverse();
         linkedList.printList();
     }
 }

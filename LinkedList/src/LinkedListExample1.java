@@ -263,4 +263,28 @@ public class LinkedListExample1 {
 
         return temp;
     }
+
+    /**
+     * Reverses the linked list in that
+     * the head becomes the tail and
+     * the tail becomes the head
+     */
+    public void reverse() {
+        // Swap the position of head and tail with each other
+        Node temp = head;
+        head = tail;
+        tail = temp;
+
+        Node after = temp.next;
+        Node before = null;
+
+        // Make the pointers to point backwards
+        // that is in the opposite direction
+        for(int i = 0; i < length; i++) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
+    }
 }
