@@ -10,11 +10,12 @@ public class DoublyLinkedList {
     /**
      * Creates the nodes that will be used in the list
      */
-    class Node {
+    static class Node {
         int value;
         Node next;
         Node prev;
 
+        // Constructor for the node class
         Node(int value) {
             this.value = value;
         }
@@ -53,14 +54,27 @@ public class DoublyLinkedList {
     }
 
     /**
-     * print the contents of all items in the list
+     * print the values of all nodes in the list
      */
     public void printList() {
         Node temp = head;
 
-        while(temp.next != null){
+        while(temp != null){
             System.out.println(temp.value);
             temp = temp.next;
         }
+    }
+
+    public void append (int value) {
+        Node newNode = new Node(value);
+
+        if(length == 0){
+            head = newNode;
+        } else {
+            tail.next = newNode;
+            newNode.prev = tail;
+        }
+        tail = newNode;
+        length++;
     }
 }
