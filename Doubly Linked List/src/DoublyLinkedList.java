@@ -67,7 +67,7 @@ public class DoublyLinkedList {
 
     /**
      *
-     * Add a new node to the linked list
+     * Add a new node to the linked list at the last position
      * @param value the value of the new node
      */
     public void append (int value) {
@@ -102,5 +102,23 @@ public class DoublyLinkedList {
         length--;
 
         return temp;
+    }
+
+    /**
+     * Add a new node to the beginning of the linked list
+     * @param value the contents of the new node
+     */
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+
+        if(length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
+        }
+        length++;
     }
 }
