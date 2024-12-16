@@ -9,11 +9,16 @@ public class Main {
 
         myDLL.append(8);
 
-        myDLL.prepend(6);
+//        myDLL.prepend(6);
 
         myDLL.printList();
 
-        // removes the last items in the linked list
+        // remove items in the linked list from the first position
+        System.out.println(myDLL.removeFirst().value);
+        System.out.println(myDLL.removeFirst().value);
+        System.out.println(myDLL.removeFirst());
+
+        // remove  items in the linked list from the last position
 //        System.out.println(myDLL.removeLast().value); // last item
 //        System.out.println(myDLL.removeLast().value); // second last item
 //        System.out.println(myDLL.removeLast()); // third last item
