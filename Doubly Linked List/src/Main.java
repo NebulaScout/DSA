@@ -13,6 +13,8 @@ public class Main {
         myDLL.prepend(6);
         myDLL.prepend(1);
 
+        myDLL.set(1, 32);
+
         myDLL.printList();
 
         System.out.println("\n\n" + myDLL.get(2).value);

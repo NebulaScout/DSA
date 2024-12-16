@@ -140,7 +140,7 @@ public class DoublyLinkedList {
     }
 
     /**
-     * Retrieve an item from the linked list
+     * Retrieve an item at a specified position from the linked list
      * @param index specify the position of the item
      * @return the item to be retrieved
      */
@@ -148,16 +148,32 @@ public class DoublyLinkedList {
         if(index < 0 || index >= length) return null;
 
         Node temp = head;
-        if(index < length/2) {
+        if(index < length/2) { // start from the head pointer if the index is less than half the length of the linked list
             for(int i = 0; i < index; i++) {
                 temp = temp.next;
             }
-        } else {
+        } else { // start from tail pointer if the index is greater than half the length of the linked list
             temp = tail;
             for(int i = length - 1; i > index; i--) {
                 temp = temp.prev;
             }
         }
         return temp;
+    }
+
+    /**
+     * Changes the data contained in the linked list
+     * @param index the node that is going to be manipulated
+     * @param value the value that is going to be added
+     * @return true if the operation as a success, false if otherwise
+     */
+    public boolean set(int index, int value) {
+        Node temp = get(index);
+
+        if(temp != null) {
+            temp.value = value;
+            return true;
+        }
+        return false;
     }
 }
