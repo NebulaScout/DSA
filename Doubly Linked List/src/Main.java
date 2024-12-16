@@ -13,12 +13,15 @@ public class Main {
         myDLL.prepend(6);
         myDLL.prepend(1);
 
-        myDLL.set(1, 32);
+//        myDLL.set(1, 32); // edits the value contained in the specified node
+
+        myDLL.insert(2, 70);
 
         myDLL.printList();
 
-        System.out.println("\n\n" + myDLL.get(2).value);
-        System.out.println(myDLL.get(0).value);
+        // Get the value contained in specific nodes
+//        System.out.println("\n\n" + myDLL.get(2).value);
+//        System.out.println(myDLL.get(0).value);
 
         // remove items in the linked list from the first position
 //        System.out.println(myDLL.removeFirst().value);
