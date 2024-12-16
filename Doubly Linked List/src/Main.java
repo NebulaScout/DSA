@@ -8,15 +8,20 @@ public class Main {
 //        myDLL.getLength();
 
         myDLL.append(8);
+        myDLL.append(5);
 
-//        myDLL.prepend(6);
+        myDLL.prepend(6);
+        myDLL.prepend(1);
 
         myDLL.printList();
 
+        System.out.println("\n\n" + myDLL.get(2).value);
+        System.out.println(myDLL.get(0).value);
+
         // remove items in the linked list from the first position
-        System.out.println(myDLL.removeFirst().value);
-        System.out.println(myDLL.removeFirst().value);
-        System.out.println(myDLL.removeFirst());
+//        System.out.println(myDLL.removeFirst().value);
+//        System.out.println(myDLL.removeFirst().value);
+//        System.out.println(myDLL.removeFirst());
 
         // remove  items in the linked list from the last position
 //        System.out.println(myDLL.removeLast().value); // last item
