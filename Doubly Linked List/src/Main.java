@@ -17,6 +17,8 @@ public class Main {
 
         myDLL.insert(2, 70);
 
+        myDLL.remove(1);
+
         myDLL.printList();
 
         // Get the value contained in specific nodes
