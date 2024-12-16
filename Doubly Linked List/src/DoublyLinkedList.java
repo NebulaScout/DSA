@@ -65,10 +65,15 @@ public class DoublyLinkedList {
         }
     }
 
+    /**
+     *
+     * Add a new node to the linked list
+     * @param value the value of the new node
+     */
     public void append (int value) {
         Node newNode = new Node(value);
 
-        if(length == 0){
+        if(length == 0){ // if there are no elements in the linked list
             head = newNode;
         } else {
             tail.next = newNode;
@@ -76,5 +81,26 @@ public class DoublyLinkedList {
         }
         tail = newNode;
         length++;
+    }
+
+    /**
+     * Removes the last item in the linked list
+     * @return the removed node
+     */
+    public Node removeLast() {
+        if(length == 0) return null;
+
+        Node temp = tail;
+        if(length == 1) {
+            head = null;
+            tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+            temp.prev = null;
+        }
+        length--;
+
+        return temp;
     }
 }

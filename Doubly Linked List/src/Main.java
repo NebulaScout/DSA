@@ -11,5 +11,9 @@ public class Main {
 
         myDLL.printList();
 
+        System.out.println(myDLL.removeLast().value);
+        System.out.println(myDLL.removeLast().value);
+        System.out.println(myDLL.removeLast());
+
     }
 }
