@@ -6,8 +6,13 @@ public class Main {
 
         myQueue.enqueue(29);
 
-        myQueue.getFirst();
-        myQueue.getLast();
+        // Remove items from top-to-bottom
+        System.out.println(myQueue.dequeue().value);
+        System.out.println(myQueue.dequeue().value);
+        System.out.println(myQueue.dequeue());
+
+//        myQueue.getFirst();
+//        myQueue.getLast();
         myQueue.getLength();
 
         myQueue.printQueue();
