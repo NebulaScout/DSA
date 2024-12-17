@@ -51,5 +51,20 @@ public class Queue {
         System.out.println("Length: " + length);
     }
 
+    /**
+     * Add a node to the end of the queue
+     * @param value the data contained in the node
+     */
+    public void enqueue(int value) {
+        Node newNode = new Node(value);
 
+        if(length == 0){
+            first = newNode;
+            last = newNode;
+        } else{
+            last.next = newNode;
+            last = newNode;
+        }
+        length++;
+    }
 }

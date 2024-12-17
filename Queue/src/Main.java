@@ -4,6 +4,8 @@ public class Main {
 
         Queue myQueue = new Queue(32);
 
+        myQueue.enqueue(29);
+
         myQueue.getFirst();
         myQueue.getLast();
         myQueue.getLength();
