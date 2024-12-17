@@ -50,4 +50,20 @@ public class Stack {
     public void getHeight() {
         System.out.println("Height: " + height);
     }
+
+    /**
+     * Add a node to the stack
+     * @param value the data contained in the node
+     */
+    public void push(int value) {
+        Node newNode = new Node(value);
+
+        if(height == 0) {
+            top = newNode;
+        } else{
+            newNode.next = top;
+            top = newNode;
+        }
+        height++;
+    }
 }

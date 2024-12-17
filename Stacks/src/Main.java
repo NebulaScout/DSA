@@ -4,6 +4,8 @@ public class Main {
 
         Stack myStack = new Stack(9);
 
+        myStack.push(5);
+
         myStack.getHeight();
         myStack.getTop();
 
