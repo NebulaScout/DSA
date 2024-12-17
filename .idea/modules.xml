@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/DSA.iml" filepath="$PROJECT_DIR$/.idea/DSA.iml" />
       <module fileurl="file://$PROJECT_DIR$/Doubly Linked List/Doubly Linked List.iml" filepath="$PROJECT_DIR$/Doubly Linked List/Doubly Linked List.iml" />
       <module fileurl="file://$PROJECT_DIR$/LinkedList/LinkedList.iml" filepath="$PROJECT_DIR$/LinkedList/LinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Stacks/Stacks.iml" filepath="$PROJECT_DIR$/Stacks/Stacks.iml" />
     </modules>
   </component>
 </project>
