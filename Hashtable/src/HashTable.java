@@ -47,4 +47,42 @@ public class HashTable {
             }
         }
     }
+
+    /**
+     * Converts a string key to an index for use in the hashtable.
+     * @param key the string to be converted
+     * @return the index of the key in the hashtable
+     */
+    private int hash(String key) {
+        int hash = 0;
+        char[] keyChars = key.toCharArray();
+        for(int i = 0; i < keyChars.length; i++) {
+            int asciiValue = keyChars[i]; // get the ascii value of the character at index i
+            // compute the hash using the ascii value to get the item's position in the hashtable
+            hash = (hash + asciiValue * 23) % dataMap.length;
+        }
+        return hash;
+    }
+
+    /**
+     * Insert a new key-value pair in the hashtable.
+     * @param key the key that contains the value
+     * @param value the value to be stored
+     */
+    public void set(String key, int value) {
+        int index = hash(key); // get the index of the key
+        Node newNode = new Node(key, value);
+
+        // check if the index is empty
+        if(dataMap[index] == null) {
+            dataMap[index] = newNode;
+        } else {
+            // resolve collision using separate chaining
+            Node temp = dataMap[index];
+            while(temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+        }
+    }
 }
