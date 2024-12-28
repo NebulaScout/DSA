@@ -9,6 +9,8 @@ public class Main {
         myHashTable.set("bolts", 200);
         myHashTable.set("screws", 140);
 
-        myHashTable.printTable();
+        System.out.println(myHashTable.get("lumber"));
+        System.out.println(myHashTable.get("cork"));
+//        myHashTable.printTable();
     }
 }

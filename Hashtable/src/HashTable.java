@@ -14,7 +14,7 @@ public class HashTable {
     private Node[] dataMap; // the hashtable
 
     /**
-     * This declares the structure of a node in the hashtable.
+     * Declare the structure of a node in the hashtable.
      */
     static class Node{
         String key;
@@ -28,14 +28,14 @@ public class HashTable {
     }
 
     /**
-     * The constructor initializes the hashtable.
+     * Initialize the hashtable.
      */
     public HashTable() {
         dataMap = new Node[SIZE];
     }
 
     /**
-     * This method prints all the items in the hashtable.
+     * Print all the items in the hashtable.
      */
     public void printTable() {
         for(int i = 0; i < dataMap.length; i++) {
@@ -49,7 +49,7 @@ public class HashTable {
     }
 
     /**
-     * Converts a string key to an index for use in the hashtable.
+     * Convert the key to an index for use in the hashtable.
      * @param key the string to be converted
      * @return the index of the key in the hashtable
      */
@@ -57,8 +57,9 @@ public class HashTable {
         int hash = 0;
         char[] keyChars = key.toCharArray();
         for(int i = 0; i < keyChars.length; i++) {
-            int asciiValue = keyChars[i]; // get the ascii value of the character at index i
-            // compute the hash using the ascii value to get the item's position in the hashtable
+            int asciiValue = keyChars[i]; // get the ascii value of the character at index position i
+            // compute the hash using the ascii value
+            // to get the position that the item will be placed in the hashtable.
             hash = (hash + asciiValue * 23) % dataMap.length;
         }
         return hash;
@@ -84,5 +85,21 @@ public class HashTable {
             }
             temp.next = newNode;
         }
+    }
+
+    /**
+     * Get the value of a key in the hashtable.
+     * @param key the key to be searched
+     * @return the value of the key
+     */
+    public int get(String key) {
+        int index = hash(key);
+        Node temp = dataMap[index];
+
+        while (temp != null) {
+            if(temp.key == key) return temp.value;
+            temp = temp.next;
+        }
+        return 0;
     }
 }
