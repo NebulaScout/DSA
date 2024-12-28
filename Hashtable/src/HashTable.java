@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * This is a demonstration of the use of a hashtable.
  * A hashtable is a data structure that stores key-value pairs.
@@ -101,5 +103,21 @@ public class HashTable {
             temp = temp.next;
         }
         return 0;
+    }
+
+    /**
+     * Get all the keys in the hashtable.
+     * @return an arraylist of all the keys in the hashtable
+     */
+    public ArrayList keys() {
+        ArrayList<String> allKeys = new ArrayList<>();
+        for(int i = 0; i < dataMap.length; i++) {
+            Node temp = dataMap[i];
+            while(temp != null) {
+                allKeys.add(temp.key);
+                temp = temp.next;
+            }
+        }
+        return allKeys;
     }
 }
